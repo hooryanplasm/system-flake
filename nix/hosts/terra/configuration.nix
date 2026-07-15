@@ -85,8 +85,8 @@
 
   services.openssh = {
     enable = true;
-    PermitRootLogin = "prohibit-password";
-    PubkeyAuthentication = true;
+    permitRootLogin = "prohibit-password";
+    passwordAuthentication = false;
   };
 
   virtualisation.docker.enable = true;

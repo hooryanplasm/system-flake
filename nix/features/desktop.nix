@@ -65,6 +65,6 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.lekton
     nerd-fonts.mononoki
-    nerd-fonts.terminess
+    nerd-fonts.terminess-ttf
   ];
 }
