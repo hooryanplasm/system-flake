@@ -2,8 +2,6 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
-    gpu-viewer
-    mesa-demos
     # jc 141
     bubblewrap
     fuse-overlayfs

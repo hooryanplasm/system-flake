@@ -18,14 +18,10 @@
 
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations.terra = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./terra/configuration.nix
-        ./terra/hardware-configuration.nix
-        ./features/desktop-shell.nix
-        ./features/i2pd-container.nix
-        ./features/neovim.nix
-        ./features/games.nix
+        ./nix/hosts/terra/configuration.nix
       ];
     };
   };

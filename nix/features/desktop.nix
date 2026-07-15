@@ -1,8 +1,11 @@
 { pkgs, inputs, ... }: {
-  imports = [ inputs.noctalia-greeter.nixosModules.default ];
+  imports = [
+    inputs.noctalia-greeter.nixosModules.default
+    inputs.noctalia.nixosModules.default
+  ];
 
   environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     xwayland-satellite
     ddcutil
     blueman
@@ -15,17 +18,9 @@
     blueman
     font-manager
     swayimg
-  ];
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.fira-code
-    nerd-fonts.iosevka
-    nerd-fonts.iosevka-term
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.lekton
-    nerd-fonts.mononoki
+    gpu-screen-recorder
+    alsa-utils
+    alsa-tools
   ];
 
   security.polkit = {
@@ -44,6 +39,12 @@
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
 
+  programs.noctalia = {
+    enable = true;
+    recommendedServices.enable = true;
+    systemd.enable = true;
+  };
+
   programs.noctalia-greeter = {
     enable = true;
     package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -54,4 +55,16 @@
       package = pkgs.adwaita-icon-theme;
     };
   };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
+    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.lekton
+    nerd-fonts.mononoki
+    nerd-fonts.terminess
+  ];
 }
