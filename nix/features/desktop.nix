@@ -14,7 +14,6 @@
     gnome-feeds
     nautilus
     mpv
-    ghostty
     blueman
     font-manager
     swayimg

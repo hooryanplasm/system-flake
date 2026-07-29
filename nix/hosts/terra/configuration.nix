@@ -7,9 +7,11 @@
     ../../features/shell.nix
     ../../features/desktop.nix
     ../../features/games.nix
+    ../../features/i2pd-container.nix
     ../../programs/neovim.nix
     # /nix/programs/firefox.nix
   ];
+
   nixpkgs.config.allowUnfree = true;
 
   users.users."juno" = {
@@ -49,6 +51,10 @@
       stylelint
       js-beautify
       ispell
+      ghostty
+      tor-browser
+      kdePackages.ark
+      rar
     ];
   };
 
@@ -77,6 +83,8 @@
     openjdk
     cmake
   ];
+
+  programs.firefox.enable = true;
 
   programs.gnupg.agent = {
     enable = true;

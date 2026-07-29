@@ -1,4 +1,14 @@
 { pkgs, ... }: {
+  programs.bash = {
+    interactiveShellInit = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -12,8 +22,6 @@
       alias commit="git commit -m"
       alias reload-ghostty="systemctl reload --user app-com.mitchellh.ghostty.service"
       alias kill-emacs='emacsclient -e "(kill-emacs)"'
-
-      export PAGER="nvim"
 
       fish_add_path -g "$HOME/.config/emacs/bin/"
 
@@ -44,23 +52,16 @@
     '';
   };
 
-  programs.bash = {
-    interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
-
   environment.systemPackages = with pkgs; [
     fishPlugins.done
     fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
     fishPlugins.colored-man-pages
     fishPlugins.grc
+    # fishPlugins.forgit
+    fishPlugins.tide
+    fishPlugins.pisces
+    fishPlugins.sponge
+    #fishPlugins.async-prompt
     fzf
     grc
   ];
