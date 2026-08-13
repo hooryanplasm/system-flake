@@ -14,7 +14,6 @@
     gnome-feeds
     nautilus
     mpv
-    blueman
     font-manager
     swayimg
     gpu-screen-recorder

@@ -1,11 +1,19 @@
 { pkgs, config, ...}: {
+  nixpkgs.overlays =
+    let
+      moz-rev = "master";
+      moz-url = fetchTarball { url = "https://github.com/mozilla/nixpkgs-mozilla/archive/${moz-rev}.tar.gz";};
+      nightlyOverlay = (import "${moz-url}/firefox-overlay.nix");
+    in [ nightlyOverlay ];
+
   programs.firefox = {
     enable = true;
-
+    package = pkgs.latest.firefox-nightly-bin;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles = {
-      ${config.home.username} = {
+      # ${config.home.username} = {
+      "juno" = {
         isDefault = true;
 
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
@@ -131,7 +139,7 @@
 
         search = {
           force = true;
-          default = "kagi";
+          default = "ddg";
           order = [
             "Kagi"
             "searxng"

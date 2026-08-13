@@ -24,6 +24,13 @@
         ./nix/hosts/terra/configuration.nix
       ];
     };
+    nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./nix/hosts/venus/configuration.nix
+      ];
+    };
   };
 
   nixConfig = {
