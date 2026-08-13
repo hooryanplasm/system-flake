@@ -1,14 +1,8 @@
-{ pkgs, config, ...}: {
-  nixpkgs.overlays =
-    let
-      moz-rev = "master";
-      moz-url = fetchTarball { url = "https://github.com/mozilla/nixpkgs-mozilla/archive/${moz-rev}.tar.gz";};
-      nightlyOverlay = (import "${moz-url}/firefox-overlay.nix");
-    in [ nightlyOverlay ];
+{ pkgs, config, inputs, ...}: {
 
   programs.firefox = {
     enable = true;
-    package = pkgs.latest.firefox-nightly-bin;
+    package =  inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles = {
