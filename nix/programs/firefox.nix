@@ -9,11 +9,12 @@
       "juno" = {
         isDefault = true;
 
-        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          darkreader
-          sponsorblock
-          ublock-origin
-        ];
+        #  TODO: Enable later??
+        # extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+        #   darkreader
+        #   sponsorblock
+        #   ublock-origin
+        # ];
 
         settings = {
           # Show previous session on startup (3 = restore session)
