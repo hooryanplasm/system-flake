@@ -1,9 +1,8 @@
-{ pkgs, config, inputs, ...}: {
-
+{ pkgs, inputs, ...}: {
   programs.firefox = {
     enable = true;
     package =  inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
-    configPath = "${config.xdg.configHome}/mozilla/firefox";
+    # configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles = {
       # ${config.home.username} = {
@@ -215,6 +214,7 @@
     };
   };
 
-  stylix.targets.firefox.profileNames = [ "${config.home.username}" ];
+  # stylix.targets.firefox.profileNames = [ "${config.home.username}" ];
+  stylix.targets.firefox.profileNames = [ "juno" ];
   stylix.enableReleaseChecks = false;
 }
