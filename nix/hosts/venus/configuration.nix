@@ -6,7 +6,7 @@
     # ../../features/desktop.nix
     ../../features/games.nix
     ../../programs/neovim.nix
-    ../../programs/firefox
+    ../../programs/firefox.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
