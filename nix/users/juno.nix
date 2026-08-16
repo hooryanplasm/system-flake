@@ -96,6 +96,7 @@
     postgresql
     openjdk
     cmake
+    mpv
   ];
 
   programs.mtr.enable = true;
