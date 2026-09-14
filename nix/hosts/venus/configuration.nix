@@ -7,6 +7,7 @@
     ../../features/games.nix
     ../../programs/neovim.nix
     ../../programs/firefox.nix
+    ../../containers/postgres.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -37,12 +38,44 @@
     LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
   };
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Core Graphics / GLX (Fixes the GLX error)
+    libglvnd
+    # X11 / Windowing dependencies
+    libX11
+    libXext
+    libXcursor
+    libXrandr
+    libXi
+    libXxf86vm
+    libXfixes
+    libXrender
+    glfw
+    # Audio (Fixes the Pipewire/Qt warning)
+    openal
+    pipewire
+    libpulseaudio
+  ];
+
   environment.systemPackages = with pkgs; [
     libcamera
     libcamera-qcam
     xclip
     libplacebo
     linuxKernel.packages.linux_7_1.cpupower
+    supabase-cli
+    # ....
+    glfw
+    kdePackages.kdialog
+    zenity
+    xprop
+
+    # blog2epub
+    pipx
+    pkg-config
+    python313Packages.pycairo
+    cairo
   ];
 
   system.stateVersion = "26.05";

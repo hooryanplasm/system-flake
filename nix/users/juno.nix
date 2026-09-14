@@ -52,6 +52,7 @@
       foliate
       krita
       gnumeric
+      opencode
       # emacs packages
       emacs-gtk
       dockerfmt
@@ -71,6 +72,7 @@
       tor-browser
       kdePackages.ark
       rar
+      zellij
     ];
   };
 
