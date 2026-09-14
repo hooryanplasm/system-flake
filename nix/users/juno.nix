@@ -99,6 +99,7 @@
     openjdk
     cmake
     mpv
+    net-tools
   ];
 
   programs.mtr.enable = true;
