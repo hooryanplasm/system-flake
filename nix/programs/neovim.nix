@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
@@ -17,7 +18,14 @@
     lua-language-server
     pyright
     astro-language-server
-    nixfmt-rs
     nixd
+    # Formatrers
+    nixfmt-rs
+    black
+    isort
+    prettier
+    stylua
+    codespell
+    sqls
   ];
 }

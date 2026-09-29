@@ -9,7 +9,7 @@
   # };
 
   containers.pg-local= {
-    autoStart = true;
+    autoStart = false;
     privateNetwork = false;
     # hostAddress = "192.168.100.10";
     # localAddress = "0.0.0.0";
