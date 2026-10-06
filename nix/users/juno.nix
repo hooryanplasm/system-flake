@@ -52,6 +52,7 @@
       foliate
       krita
       gnumeric
+      gnome-disk-utility
       opencode
       # emacs packages
       emacs-gtk
@@ -69,10 +70,11 @@
       ispell
 
       ghostty
-      tor-browser
       kdePackages.ark
       rar
+
       zellij
+      tmux
     ];
   };
 
@@ -94,6 +96,7 @@
     gcc
     bun
     nodejs
+    pnpm
     python3
     postgresql
     openjdk
@@ -110,8 +113,8 @@
 
   services.openssh = {
     enable = true;
-    permitRootLogin = "prohibit-password";
-    passwordAuthentication = false;
+    PermitRootLogin = "prohibit-password";
+    PasswordAuthentication = false;
   };
 
   virtualisation.docker.enable = true;
