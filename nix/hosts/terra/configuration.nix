@@ -26,10 +26,5 @@
     2234 # Soulseek port
   ];
 
-  # networking.hosts = {
-  #   "74.208.51.189" = [ "jupyter" ];
-  #   "192.168.100.81" = [ "venus" ];
-  # };
-
   system.stateVersion = "26.05";
  }
