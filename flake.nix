@@ -24,14 +24,16 @@
 
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations.terra = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      stdenv.hostPlatform.system = "x86_64-linux";
+      system.stateVersion = "26.11";
       specialArgs = { inherit inputs; };
       modules = [
         ./nix/hosts/terra/configuration.nix
       ];
     };
     nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      stdenv.hostPlatform.system = "x86_64-linux";
+      system.stateVersion = "26.11";
       specialArgs = { inherit inputs; };
       modules = [
         ./nix/hosts/venus/configuration.nix

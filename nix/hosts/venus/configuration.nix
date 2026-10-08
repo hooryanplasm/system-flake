@@ -2,13 +2,12 @@
   imports = [
     ./hardware-configuration.nix
     ../../users/juno.nix
-    ../../features/shell.nix
-    # ../../features/desktop.nix
+    ../../features/fish-shell.nix
     ../../features/games.nix
-    ../../features/deepseek-harness.nix
     ../../programs/neovim.nix
     ../../programs/firefox.nix
-    ../../containers/postgres.nix
+    ../../services/deepseek-harness.nix
+    #../../services/postgres.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -72,13 +71,10 @@
     kdePackages.kdialog
     zenity
     xprop
-
     # blog2epub
     pipx
     pkg-config
     python313Packages.pycairo
     cairo
   ];
-
-  system.stateVersion = "26.05";
 }
