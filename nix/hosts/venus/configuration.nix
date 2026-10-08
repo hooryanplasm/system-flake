@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../users/juno.nix
@@ -8,6 +8,7 @@
     ../../programs/neovim.nix
     ../../programs/firefox.nix
     ../../containers/postgres.nix
+    inputs.deepseek-harness.nixosModules.default
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -19,11 +20,18 @@
   # Plasma 6
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  programs.kdeconnect.enable = true;
+  services.blueman.enable = true;
+
+  services.dsh = {
+    enable = true;
+    listenAddress = "127.0.0.1";
+    port = 3080;
+    #trustedHosts = [ "dsh.example.com" ];
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  services.blueman.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -59,11 +67,12 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    proton-vpn
     libcamera
     libcamera-qcam
     xclip
     libplacebo
-    linuxKernel.packages.linux_7_1.cpupower
+    # linuxKernel.packages.linux_7_1.cpupower
     supabase-cli
     # ....
     glfw

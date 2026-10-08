@@ -14,6 +14,7 @@
     };
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    deepseek-harness.url = "github:moraxyc/deepseek-harness.nix";
 
     firefox = {
       url = "github:nix-community/flake-firefox-nightly";

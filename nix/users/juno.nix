@@ -54,6 +54,7 @@
       gnumeric
       gnome-disk-utility
       opencode
+      pi-coding-agent
       # emacs packages
       emacs-gtk
       dockerfmt
@@ -113,8 +114,8 @@
 
   services.openssh = {
     enable = true;
-    PermitRootLogin = "prohibit-password";
-    PasswordAuthentication = false;
+    permitRootLogin = "prohibit-password";
+    passwordAuthentication = false;
   };
 
   virtualisation.docker.enable = true;
