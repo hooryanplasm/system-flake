@@ -21,12 +21,6 @@
     };
   };
 
-  networking.hosts = {
-    "74.208.51.189" = [ "jupyter" ];
-    "192.168.100.81" = [ "venus" ];
-    "192.168.100.68" = [ "terra" ];
-  };
-
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
