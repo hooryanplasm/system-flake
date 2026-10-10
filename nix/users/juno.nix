@@ -36,24 +36,23 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       librewolf
-      calibre
-      qbittorrent-enhanced
       ungoogled-chromium
-      amberol
-      tauon
+      qbittorrent-enhanced
       chafa # Something depends of this, can't remember
       btop
       yazi
-      zathura
       keepassxc
-      nicotine-plus
-      foliate
-      krita
+      gnome-disk-utility
       gnumeric
       kdePackages.ark
       rar
-      gnome-disk-utility
-
+      zathura
+      krita
+      foliate
+      calibre
+      nicotine-plus
+      tauon
+      amberol
       opencode
       pi-coding-agent
       antigravity-ide
@@ -89,7 +88,8 @@
     ghostty
     alacritty
     kitty
-    kitty-images
+    kitty-img
+    kitty-themes
   ];
 
   programs.mtr.enable = true;
