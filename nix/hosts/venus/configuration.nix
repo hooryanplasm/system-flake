@@ -4,8 +4,8 @@
     ../../users/juno.nix
     ../../features/fish-shell.nix
     ../../features/games.nix
-    ../../programs/neovim.nix
-    ../../programs/firefox.nix
+    ../../features/editors.nix
+    ../../features/firefox.nix
     ../../services/deepseek-harness.nix
     #../../services/postgres.nix
   ];
@@ -38,25 +38,26 @@
     LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Core Graphics / GLX (Fixes the GLX error)
-    libglvnd
-    # X11 / Windowing dependencies
-    libX11
-    libXext
-    libXcursor
-    libXrandr
-    libXi
-    libXxf86vm
-    libXfixes
-    libXrender
-    glfw
-    # Audio (Fixes the Pipewire/Qt warning)
-    openal
-    pipewire
-    libpulseaudio
-  ];
+  # Not using it right now
+  # programs.nix-ld.enable = true;
+  # programs.nix-ld.libraries = with pkgs; [
+  #   # Core Graphics / GLX (Fixes the GLX error)
+  #   libglvnd
+  #   # X11 / Windowing dependencies
+  #   libX11
+  #   libXext
+  #   libXcursor
+  #   libXrandr
+  #   libXi
+  #   libXxf86vm
+  #   libXfixes
+  #   libXrender
+  #   glfw
+  #   # Audio (Fixes the Pipewire/Qt warning)
+  #   openal
+  #   pipewire
+  #   libpulseaudio
+  # ];
 
   environment.systemPackages = with pkgs; [
     proton-vpn
@@ -67,10 +68,10 @@
     # linuxKernel.packages.linux_7_1.cpupower
     supabase-cli
     # ....
-    glfw
-    kdePackages.kdialog
-    zenity
-    xprop
+    # glfw
+    # kdePackages.kdialog
+    # zenity
+    # xprop
     # blog2epub
     pipx
     pkg-config

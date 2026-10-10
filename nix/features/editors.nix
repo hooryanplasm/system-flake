@@ -16,9 +16,9 @@
     jujutsu
 
     lua-language-server
-    pyright
     astro-language-server
     nixd
+    pyright
     # Formatrers
     nixfmt-rs
     black
@@ -27,5 +27,19 @@
     stylua
     codespell
     sqls
+    # emacs packages
+    emacs-gtk
+    dockerfmt
+    clang-tools
+    glslang
+    sqlite
+    pandoc
+    graphviz
+    shfmt
+    shellcheck
+    html-tidy
+    stylelint
+    js-beautify
+    ispell
   ];
 }

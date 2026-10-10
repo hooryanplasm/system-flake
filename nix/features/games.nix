@@ -2,11 +2,6 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # jc 141
-    bubblewrap
-    fuse-overlayfs
-    dwarfs
-
     lutris
     protonup-qt
     (retroarch.withCores

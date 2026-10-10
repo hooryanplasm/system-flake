@@ -38,12 +38,10 @@
       librewolf
       calibre
       qbittorrent-enhanced
-      alacritty
-      antigravity
       ungoogled-chromium
       amberol
       tauon
-      chafa
+      chafa # Something depends of this, can't remember
       btop
       yazi
       zathura
@@ -52,30 +50,13 @@
       foliate
       krita
       gnumeric
-      gnome-disk-utility
-      opencode
-      pi-coding-agent
-      # emacs packages
-      emacs-gtk
-      dockerfmt
-      clang-tools
-      glslang
-      sqlite
-      pandoc
-      graphviz
-      shfmt
-      shellcheck
-      html-tidy
-      stylelint
-      js-beautify
-      ispell
-
-      ghostty
       kdePackages.ark
       rar
+      gnome-disk-utility
 
-      zellij
-      tmux
+      opencode
+      pi-coding-agent
+      antigravity-ide
     ];
   };
 
@@ -104,6 +85,11 @@
     cmake
     mpv
     net-tools
+    # terminals
+    ghostty
+    alacritty
+    kitty
+    kitty-images
   ];
 
   programs.mtr.enable = true;

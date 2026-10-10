@@ -6,8 +6,8 @@
     ../../features/fish-shell.nix
     ../../features/desktop.nix
     ../../features/games.nix
-    ../../programs/neovim.nix
-    ../../programs/firefox.nix
+    ../../features/editors.nix
+    ../../features/firefox.nix
   ];
 
   boot.loader.grub.enable = true;
