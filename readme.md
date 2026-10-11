@@ -1,6 +1,6 @@
 ![Main Screenshot](./docs/screenshots/rice.png)
 
-# Polymnia's personal flake
+# Overview
 This setup might be too simple compared to what you can get with popular repos of nix users but I guess I dont do that much with my computer... I spend most of the time inside the terminal or browsers and sometimes watch anime or read books, and it works perfectly fine for that.
 
 I managed to write this configuration after a short tutorial on the nix language and a few documentation pages. I'm not too sure if this flake breaks conventions or does something awfully wrong but for now it just werks on my machines.
