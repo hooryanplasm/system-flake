@@ -1,16 +1,16 @@
 ![Main Screenshot](./docs/screenshots/rice.png)
 
 # Overview
-I was pretty overwhelmed reading through complex and overengineered examples that use libraries and other confusing patterns.
-I came up with this configuration after a short tutorial on the nix language and a few documentation pages. For that reason I'm not too sure if this flake breaks conventions or does something awfully wrong. I'll probably focus on this later and make one of those overblown configurations myself, but for now it just werks on my machines.
+I managed to write this configuration after a short tutorial on the nix language and a few documentation pages. I'm not too sure if this flake breaks conventions or does something awfully wrong but for now it just werks on my machines.
 
-If you are also feeling lost jumping between l337 rice dotfiles this simpler approach may help you to get started.
+I refuse to apply abstraction layers beyond the base nix tools so this configuration will stay free of libraries and wrapped programs. I dont like home manager either.
+This setup might be too simple compared to what you get from other nix users with popular repos but I guess I dont do that much with my computer, I spent most of the time inside the terminal or browsers and sometimes watch anime or read books, and it works perfectly for that.
 
 # Some features
 - Niri + Noctalia (best linux desktop).
 - Some overlays for nightly builds (neovim, firefox).
-- Fish shell
-- TODO: Networking configuration between hosts
+- Fish shell.
+- TODO: Load more dotfiles and link them properly
 
 # Screenshots
 ![screenshot2](./docs/screenshots/rice1.png)
