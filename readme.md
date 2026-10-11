@@ -12,8 +12,9 @@ I refuse to apply abstraction layers beyond the base nix tools so this configura
 - Some overlays for nightly builds (neovim, firefox, noctalia).
 - Fish shell.
 - TODO: Manage secrets.
-- TODO: Upload all dotfiles and link them properly
-- TODO: Migrate to Umbriel
+- TODO: Upload all dotfiles and link them properly.
+- TODO: Upload wallpapers.
+- TODO: Migrate to Umbriel.
 
 # Resources
 For  beginners I highly recommend getting the basics down before even touching your new system, specifically learning the basics of the nix language, this short tutorial makes the research so much easier.
@@ -22,13 +23,19 @@ For  beginners I highly recommend getting the basics down before even touching y
 
 # Usage
 Build
-`$ sudo nixos-rebuild switch --flake .#[host] --accept-flake-config`
+``` bash
+sudo nixos-rebuild switch --flake .#[host] --accept-flake-config
+```
 
 Update
-`$ sudo nix flake update`
+``` bash
+sudo nix flake update
+```
 
 Clean (yes I dont keep backups)
-`$ sudo nix-collect-garbage -d`
+``` bash
+sudo nix-collect-garbage -d
+```
 
 # Screenshots
 ![screenshot2](./docs/screenshots/rice1.png)
